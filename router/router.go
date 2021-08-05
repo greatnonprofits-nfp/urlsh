@@ -9,12 +9,12 @@ import (
 )
 
 var routes = map[string]http.HandlerFunc{
-	"GET /":                  controller.Index,
+	"GET /":                  controller.Status,
 	"GET /banner.png":        controller.Banner,
 	"GET /favicon.ico":       controller.Favicon,
 	"GET /robots.txt":        controller.Robots,
 	"GET /status":            controller.Status,
-	"POST /api/urls":         controller.CreateShortURL,
+	"POST /api/admin/urls":   controller.CreateShortURL,
 	"GET /api/admin/urls":    controller.ListURLs,
 	"DELETE /api/admin/urls": controller.DeleteShortURL,
 }
