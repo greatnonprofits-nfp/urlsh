@@ -12,7 +12,7 @@ import (
 // It responds to `POST /api/urls` and does not require auth token.
 func CreateShortURL(res http.ResponseWriter, req *http.Request) {
 	shortCode, err := url.CreateURLShortCodeFromRequest(req)
-	shortURL := fmt.Sprintf("%s%s%s", "http://", req.Host, "/"+shortCode)
+	shortURL := fmt.Sprintf("%s%s%s", "https://", req.Host, "/"+shortCode)
 	body := response.Body{"short_code": shortCode, "short_url": shortURL}
 
 	if err == nil {
